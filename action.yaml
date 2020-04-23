@@ -1,5 +1,9 @@
-name: 'netrc'
+name: 'Setup netrc'
+author: 'Ross MacArthur'
 description: 'Append an entry to the netrc file'
+branding:
+  icon: 'lock'
+  color: 'black'
 inputs:
   machine:
     description: 'The remote machine name'
