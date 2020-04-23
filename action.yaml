@@ -1,0 +1,15 @@
+name: 'netrc'
+description: 'Append an entry to the netrc file'
+inputs:
+  machine:
+    description: 'The remote machine name'
+    required: true
+  username:
+    description: 'The remote username'
+    default: ''
+  password:
+    description: 'The remote password'
+    default: ''
+runs:
+  using: 'node12'
+  main: 'index.js'

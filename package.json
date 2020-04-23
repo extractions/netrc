@@ -1,0 +1,23 @@
+{
+  "name": "netrc",
+  "version": "0.1.0",
+  "description": "Append an entry to the netrc file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/extractions/netrc.git"
+  },
+  "author": "Ross MacArthur <ross@macarthur.io>",
+  "license": "MIT OR Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/extractions/netrc/issues"
+  },
+  "homepage": "https://github.com/extractions/netrc#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1"
+  }
+}
