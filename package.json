@@ -4,6 +4,7 @@
   "description": "Append an entry to the netrc file",
   "main": "index.js",
   "scripts": {
+    "lint": "node node_modules/.bin/eslint *.js",
     "build": "rm -rf dist/ && ncc build --minify"
   },
   "repository": {
@@ -17,7 +18,11 @@
   },
   "homepage": "https://github.com/extractions/netrc#readme",
   "dependencies": {
-    "@actions/core": "^1.2.3",
-    "@actions/github": "^2.1.1"
+    "@actions/core": "^1.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
   }
 }

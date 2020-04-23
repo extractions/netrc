@@ -12,4 +12,5 @@ jobs:
         node-version: '12.x'
     - run: npm install --global @zeit/ncc
     - run: npm ci
+    - run: npm run lint
     - run: npm run build
