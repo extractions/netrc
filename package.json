@@ -1,6 +1,6 @@
 {
   "name": "netrc",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Append an entry to the netrc file",
   "main": "index.js",
   "scripts": {
