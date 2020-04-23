@@ -11,5 +11,5 @@ jobs:
       with:
         node-version: '12.x'
     - run: npm install --global @zeit/ncc
-    - run: ncc build index.js --minify
-    - run: git diff --exit-code
+    - run: npm ci
+    - run: npm run build

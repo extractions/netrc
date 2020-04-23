@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Append an entry to the netrc file",
   "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist/ && ncc build --minify"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/extractions/netrc.git"
