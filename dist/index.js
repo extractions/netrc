@@ -369,7 +369,7 @@ try {
     console.log(`wrote ${machine} credentials to ~/.netrc`);
   })
 } catch (error) {
-  core.setFailed(err.message);
+  core.setFailed(error.message);
 }
 
 
