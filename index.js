@@ -11,8 +11,8 @@ try {
   const netrc = path.resolve(os.homedir(), '.netrc');
   fs.writeFile(netrc, line, { flag: 'a' }, (error) => {
     if (error) throw error;
-    core.info(`wrote ${machine} credentials to ~/.netrc`);
+    core.info(`[netrc] wrote ${machine} credentials to ~/.netrc`);
   });
 } catch (error) {
-  core.setFailed(error.message);
+  core.setFailed(`[netrc] ${error.message}`);
 }

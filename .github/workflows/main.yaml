@@ -14,3 +14,25 @@ jobs:
     - run: npm ci
     - run: npm run lint
     - run: npm run build
+
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run self
+      uses: ./
+      with:
+        machine: ross.macarthur.io
+        username: user
+        password: pass
+
+    - name: Check ~/.netrc contents
+      run: |
+        [ "$(cat ~/.netrc)" = "machine ross.macarthur.io login user password pass" ]
+      shell: bash
