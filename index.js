@@ -9,10 +9,10 @@ try {
   const password = encodeURI(core.getInput('password')) || "''";
   const line = `machine ${machine} login ${username} password ${password}\n`;
   const netrc = path.resolve(os.homedir(), '.netrc');
-  fs.writeFile(netrc, line, { flag: 'a' }, (error) => {
-    if (error) throw error;
-    core.info(`[netrc] wrote ${machine} credentials to ~/.netrc`);
+  fs.writeFile(netrc, line, { flag: 'a' }, (err) => {
+    if (err) throw err;
+    core.info(`Setup ~/.netrc credentials for ${machine}`);
   });
-} catch (error) {
-  core.setFailed(`[netrc] ${error.message}`);
+} catch (err) {
+  core.setFailed(err.message);
 }
