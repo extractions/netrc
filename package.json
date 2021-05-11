@@ -2,10 +2,11 @@
   "name": "netrc",
   "version": "1.2.0",
   "description": "Append an entry to the netrc file",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "lint": "node node_modules/.bin/eslint *.js",
-    "build": "rm -rf dist/ && ncc build --minify"
+    "fmt": "node node_modules/.bin/prettier --write **/*.ts",
+    "lint": "node node_modules/.bin/eslint **/*.ts",
+    "build": "rm -rf dist/ && ncc build src/index.ts --minify"
   },
   "repository": {
     "type": "git",
@@ -18,11 +19,15 @@
   },
   "homepage": "https://github.com/extractions/netrc#readme",
   "dependencies": {
-    "@actions/core": "^1.2.6"
+    "@actions/core": "^1.2.7"
   },
   "devDependencies": {
+    "@types/node": "^14.11.6",
+    "@types/semver": "^7.3.4",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
     "eslint": "^7.10.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.1"
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
   }
 }
