@@ -2,7 +2,8 @@
 
 ![build](https://img.shields.io/github/workflow/status/extractions/netrc/build)
 
-This GitHub Action will append an entry to the `~/.netrc` file for you.
+This GitHub Action will append an entry to the `~/.netrc` file for you. File
+owner and access permission checks are done before writing to the file.
 
 ## Usage
 
@@ -62,7 +63,7 @@ jobs:
           username: ${{ secrets.PYPI_USERNAME }}
           password: ${{ secrets.PYPI_PASSWORD }}
 
-      - uses: actions/setup-python@v1
+      - uses: actions/setup-python@v2
         with:
           python-version: 3.8
 
