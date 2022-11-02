@@ -20,15 +20,16 @@
   },
   "homepage": "https://github.com/extractions/netrc#readme",
   "dependencies": {
-    "@actions/core": "^1.2.7"
+    "@actions/core": "^1.10.0"
   },
   "devDependencies": {
-    "@types/node": "^14.11.6",
-    "@types/semver": "^7.3.4",
-    "@typescript-eslint/eslint-plugin": "^4.4.0",
-    "@typescript-eslint/parser": "^4.4.0",
-    "eslint": "^7.10.0",
-    "prettier": "^2.1.2",
-    "typescript": "^4.0.3"
+    "@types/node": "^18.8.5",
+    "@types/semver": "^7.3.12",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "@vercel/ncc": "^0.34.0",
+    "eslint": "^8.25.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
   }
 }

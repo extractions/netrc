@@ -9,7 +9,7 @@ async function checkPermissions(p: string): Promise<void> {
   }
   try {
     const stat = await fs.stat(p);
-    if (stat.uid != process.getuid()) {
+    if (process.getuid && stat.uid != process.getuid()) {
       throw new Error("~/.netrc file owner does not match current user");
     }
     if (stat.mode & (constants.S_IRWXG | constants.S_IRWXO)) {
@@ -19,10 +19,14 @@ async function checkPermissions(p: string): Promise<void> {
       );
     }
   } catch (err) {
-    if (err.code != "ENOENT") {
-      throw err;
-    }
+    if (isErrnoException(err) && err.code == "ENOENT") return;
+    else throw err;
   }
+}
+
+function isErrnoException(e: unknown): e is NodeJS.ErrnoException {
+  if ("code" in (e as any)) return true;
+  else return false;
 }
 
 async function main() {
@@ -35,7 +39,9 @@ async function main() {
     await checkPermissions(netrc);
     await fs.writeFile(netrc, line, { flag: "a", mode: 0o600 });
   } catch (err) {
-    core.setFailed(err.message);
+    if (err instanceof Error) {
+      core.setFailed(err.message);
+    }
   }
 }
 
