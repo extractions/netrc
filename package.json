@@ -6,7 +6,7 @@
   "scripts": {
     "fmt": "node node_modules/.bin/prettier --write **/*.ts",
     "lint": "node node_modules/.bin/eslint **/*.ts",
-    "build": "rm -rf dist/ && ncc build src/index.ts --minify",
+    "build": "rm -rf dist/ && ncc build src/create.ts --minify -o dist/create && ncc build src/remove.ts --minify -o dist/remove",
     "run": "npm run build && node dist/index.js"
   },
   "repository": {

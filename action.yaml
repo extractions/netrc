@@ -16,4 +16,6 @@ inputs:
     default: ''
 runs:
   using: 'node16'
-  main: 'dist/index.js'
+  main: 'dist/create/index.js'
+  post: 'dist/remove/index.js'
+  post-if: 'always()'
