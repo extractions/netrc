@@ -1,6 +1,6 @@
 # `netrc` action
 
-![build](https://img.shields.io/github/workflow/status/extractions/netrc/build)
+[![build](https://github.com/extractions/netrc/actions/workflows/build.yaml/badge.svg)](https://github.com/extractions/netrc/actions/workflows/build.yaml)
 
 This GitHub Action will append an entry to the `~/.netrc` file for you. File
 owner and access permission checks are done before writing to the file.
