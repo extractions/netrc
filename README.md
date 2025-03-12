@@ -20,7 +20,7 @@ owner and access permission checks are done before writing to the file.
 Add the following to your workflow.
 
 ```yaml
-- uses: extractions/netrc@v1
+- uses: extractions/netrc@v2
   with:
     machine: some.private.domain.com
     username: ${{ secrets.USERNAME }}
@@ -55,15 +55,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - uses: extractions/netrc@v1
+      - uses: extractions/netrc@v2
         with:
           machine: pypi.private.domain.com
           username: ${{ secrets.PYPI_USERNAME }}
           password: ${{ secrets.PYPI_PASSWORD }}
 
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.8
 
