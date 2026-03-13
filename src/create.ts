@@ -15,7 +15,7 @@ async function checkPermissions(p: string): Promise<void> {
     if (stat.mode & (constants.S_IRWXG | constants.S_IRWXO)) {
       throw new Error(
         "~/.netrc access too permissive: " +
-          "access permissions must restrict access to only the owner"
+          "access permissions must restrict access to only the owner",
       );
     }
   } catch (err) {
