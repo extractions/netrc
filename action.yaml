@@ -15,7 +15,7 @@ inputs:
     description: 'The remote password'
     default: ''
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/create/index.js'
   post: 'dist/remove/index.js'
   post-if: 'always()'
